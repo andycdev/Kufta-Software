@@ -1,0 +1,166 @@
+
+/* ===== APP ===== */
+.app {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  background: var(--blur-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: var(--blur-scrolled);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo img {
+  height: 50px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));
+}
+
+/* Menú */
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-menu li a {
+  color: rgb(29, 29, 29);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  transition: 0.3s;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.nav-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: var(--primary-color);
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a.active::after {
+  width: 100%;
+}
+
+/* CTA */
+.cta-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  backdrop-filter: blur(8px);
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: rgb(31, 31, 31);
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* Menú móvil */
+@media (max-width: 992px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease;
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  .hamburger { display: flex; }
+  .cta-button { display: none; }
+}
+
+/* ===== SLIDER HORIZONTAL ===== */
+.slider-container {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  margin-top: 80px;
+  overflow: hidden;
+  position: relative;
+  /* QUITA overflow: hidden del contenedor si quieres scroll vertical */
+  /* O mejor: deja solo en X */
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.slider {
+  display: flex;
+  width: 400vw;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.slide {
+  width: 100vw;
+  height: auto;           /* Cambia de 100% a auto */
+  min-height: calc(100vh - 80px); /* Mínimo una pantalla */
+  display: flex;
+  align-items: flex-start; /* Cambia de center a flex-start */
+  justify-content: center;
+  flex-shrink: 0;
+  overflow-y: auto;       /* Permite scroll si el contenido es largo */
+}

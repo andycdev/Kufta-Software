@@ -1,0 +1,301 @@
+/* src/components/Contactenos.css */
+.contactenos-section {
+  padding: 2rem 2rem;
+  color: black;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactenos-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1.5" fill="%238b5cf6" opacity="0.1"/></svg>')
+    repeat;
+  animation: float 20s infinite linear;
+}
+
+@keyframes float {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(100px, 100px);
+  }
+}
+
+.container-contactme {
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Formulario */
+.form-container h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(120deg, var(--primary-color), black);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.form-container p {
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.2rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--primary-color);
+  border-radius: 12px;
+  color: black;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 20px rgba(105, 246, 92, 0.3);
+}
+
+.btn-submit {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-submit:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.success-msg,
+.error-msg {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.success-msg {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+.error-msg {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+/* Info de contacto */
+.info-container h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+
+/* Redes sociales */
+.redes-sociales {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.redes-sociales a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--primary-color);
+  border-radius: 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.redes-sociales a:hover {
+  background: #23d47c;
+  transform: translateX(10px);
+}
+
+.redes-sociales a.whatsapp {
+  background: linear-gradient(120deg, #25d366, #128c7e);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .contacto-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .contacto-title {
+    position: static;
+    transform: none;
+    font-size: 5rem;
+    text-align: center;
+    opacity: 0.1;
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .contactenos-section {
+    padding: 80px 1rem;
+  }
+  .contacto-title {
+    font-size: 3.5rem;
+  }
+  .form-container h2 {
+    font-size: 2.2rem;
+  }
+}
+
+
+.footer {
+  background: linear-gradient(135deg, #0a0a15 0%, #12121e 50%, #0f0f1a 100%);
+  color: #aaa;
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15), transparent 50%);
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand h3 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  background: linear-gradient(120deg, #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.footer-brand h3 span {
+  color: #8b5cf6;
+}
+
+.footer-brand p {
+  font-size: 1rem;
+  color: #777;
+  margin: 0 0 2rem;
+  font-style: italic;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 50%;
+  color: #ccc;
+  font-size: 1.4rem;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(5px);
+}
+
+.footer-socials a:hover {
+  background: rgba(139, 92, 246, 0.2);
+  color: white;
+  transform: translateY(-6px) scale(1.1);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3);
+  border-color: #8b5cf6;
+}
+
+.footer-socials a.whatsapp:hover {
+  background: #25d366;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+}
+
+.footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  font-size: 0.95rem;
+  color: #666;
+}
+
+
+.heart {
+  color: #ec4899;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.footer-tagline {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #555;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .footer-brand h3 {
+    font-size: 2rem;
+  }
+  .footer-socials a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
