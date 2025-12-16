@@ -1,16 +1,59 @@
-# React + Vite
+# 🌐 Kufta Software — Portafolio Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositorio contiene el **portafolio web personal de Kufta Software**, donde presento mis proyectos, habilidades y enfoque en el desarrollo de software, con especial énfasis en aplicaciones móviles y experiencias cuidadas a nivel visual y técnico.
 
-Currently, two official plugins are available:
+🔗 **Sitio en producción:**  
+👉 https://kufta-software.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ ¿Qué es este proyecto?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Kufta Software es mi espacio digital para mostrar:
 
-## Expanding the ESLint configuration
+- Proyectos reales desarrollados
+- Mi forma de pensar el software: orden, diseño y funcionalidad
+- Experimentos visuales con animaciones, gradientes y transiciones
+- Una identidad clara, personal y en constante evolución
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+No es solo un portafolio, es un laboratorio vivo.
+
+---
+
+## 🧠 Características principales
+
+- Diseño moderno y responsive (móvil, tablet y escritorio)
+- Animaciones activadas por viewport (Intersection Observer)
+- Secciones independientes (Inicio, Sobre mí, Portafolio)
+- Transiciones suaves y gradientes animados
+- Enlaces externos seguros (GitHub, proyectos, demos)
+- Deploy automático con Vercel
+
+---
+
+## 🛠️ Tecnologías usadas
+
+- React
+- CSS moderno (Flexbox, animaciones y gradientes)
+- JavaScript
+- Vercel (deploy)
+- Buenas prácticas de accesibilidad y performance
+
+---
+
+## 📂 Proyectos destacados
+
+### 📱 Kufta Percha
+Aplicación móvil desarrollada en Flutter para organizar ropa, crear pintas completas y planear outfits por fecha. Incluye galería interna de prendas, favoritos, búsqueda, calendario, notificaciones y almacenamiento local usando Hive, sin depender de servicios externos.
+
+---
+
+## 🚀 Instalación local
+
+Para ejecutar el proyecto en tu entorno local:
+
+```bash
+git clone https://github.com/tu-usuario/tu-repositorio.git
+cd tu-repositorio
+npm install
+npm run dev

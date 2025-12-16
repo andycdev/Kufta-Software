@@ -4,14 +4,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import logo from "./assets/kufta_banner_reverted.png";
 import KuftaSoftware from "./pages/kufta_software/Kufta_software";
 import Servicios from "./pages/servicios/Servicios";
-import Portafolio from "./pages/Portafolio";
+import Portafolio from "./pages/portafolio/Portafolio";
 import SobreMi from "./pages/sobremi/SobreMi";
 import "./App.css";
-    
+
 const pages = [
   { name: "Kufta Software", component: <KuftaSoftware /> },
   // { name: "Servicios", component: <Servicios /> },
-  // { name: "Portafolio", component: <Portafolio /> },
+  { name: "Portafolio", component: <Portafolio /> },
   { name: "Sobre mí", component: <SobreMi /> },
 ];
 

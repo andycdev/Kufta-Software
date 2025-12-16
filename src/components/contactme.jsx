@@ -172,7 +172,7 @@ ${formData.name}`
               © {currentYear} <strong>KUFTA Software</strong>
             </p>
             <p className="footer-tagline">
-              Hecho con <FaHeart className="heart" /> por Felipe
+              Hecho con <FaHeart className="heart" color="var(--primary-color)"/> por Felipe
               <br />
               <span>El código es arte. El futuro es ahora.</span>
             </p>
