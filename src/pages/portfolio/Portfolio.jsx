@@ -8,6 +8,9 @@ import logoKufta from "../../assets/logo/kufta_reverted.png";
 import logoKuftaPercha from "../../assets/logo/kufta_icon_reverted.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
 import Contactme from "../../components/contactme/Contactme.jsx";
+import KuftaP1 from "../../assets/portfolio/kufta_percha1.png"
+import KuftaP2 from "../../assets/portfolio/kufta_percha2.png"
+import KuftaP3 from "../../assets/portfolio/kufta_percha3.png"
 
 const title = "Portafolio";
 
@@ -146,15 +149,15 @@ export default function Portfolio() {
         </p>
         <div className={style.row_img_kufta_percha}>
           <img
-            src="src/assets/portfolio/kufta_percha1.png"
+            src={KuftaP1}
             alt="Kufta Percha"
           />
           <img
-            src="src/assets/portfolio/kufta_percha2.png"
+            src={KuftaP2}
             alt="Kufta Percha"
           />
           <img
-            src="src/assets/portfolio/kufta_percha3.png"
+            src={KuftaP3}
             alt="Kufta Percha"
           />
         </div>

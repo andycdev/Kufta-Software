@@ -3,13 +3,14 @@ import React from "react";
 import style from "./AboutMe.module.css";
 import ContactMe from "../../components/contactme/Contactme.jsx";
 import Skill from "../../components/skill/Skill.jsx";
+import Me from "../../assets/about_me/creator.jpg"
 
 export default function AboutMe() {
   return (
     <div className={style.aboutme_wrapper}>
       <div className={style.me}>
         <div className={style.photo_wrapper}>
-          <img src="src/assets/about_me/creator.jpg" alt="Creador" />
+          <img src={Me} alt="Creador" />
 
           {/* burbujas */}
           <span className={`${style.bubble} ${style.b1}`}></span>
@@ -44,32 +45,32 @@ export default function AboutMe() {
         <h3>Frameworks</h3>
         <div className={style.skils}>
           <Skill
-            icon="src/assets/about_me/skills/flutter.png"
+            icon="/assets/skills/flutter.png"
             name="Flutter"
             type="Framework"
           />
           <Skill
-            icon="src/assets/about_me/skills/jetpack_compose.png"
+            icon="/assets/skills/jetpack_compose.png"
             name="Jetpack Compose"
             type="Framework (UI para Android)"
           />
           <Skill
-            icon="src/assets/about_me/skills/react.png"
+            icon="/assets/skills/react.png"
             name="React"
             type="Librería"
           />
           <Skill
-            icon="src/assets/about_me/skills/django.png"
+            icon="/assets/skills/django.png"
             name="Django"
             type="Framework"
           />
           <Skill
-            icon="src/assets/about_me/skills/Expressjs.png"
+            icon="/assets/skills/Expressjs.png"
             name="Express.js"
             type="Framework"
           />
           <Skill
-            icon="src/assets/about_me/skills/fastapi.png"
+            icon="/assets/skills/fastapi.png"
             name="FastAPI"
             type="Framework"
           />
@@ -77,45 +78,45 @@ export default function AboutMe() {
         <h3>Lenguajes</h3>
         <div className={style.skils}>
           <Skill
-            icon="src/assets/about_me/skills/dart.png"
+            icon="/assets/skills/dart.png"
             name="Dart"
             type="Lenguaje"
           />
           <Skill
-            icon="src/assets/about_me/skills/kotlin.png"
+            icon="/assets/skills/kotlin.png"
             name="Kotlin"
             type="Lenguaje"
           />
 
           <Skill
-            icon="src/assets/about_me/skills/php.png"
+            icon="/assets/skills/php.png"
             name="PHP"
             type="Lenguaje"
           />
 
           <Skill
-            icon="src/assets/about_me/skills/typescript.png"
+            icon="/assets/skills/typescript.png"
             name="TypeScript"
             type="Lenguaje"
           />
 
           <Skill
-            icon="src/assets/about_me/skills/html.png"
+            icon="/assets/skills/html.png"
             name="HTML"
             type="Lenguaje de marcado"
           />
           <Skill
-            icon="src/assets/about_me/skills/css.png"
+            icon="/assets/skills/css.png"
             name="CSS"
             type="Lenguaje de estilos"
           />
           <Skill
-            icon="src/assets/about_me/skills/javascript.png"
+            icon="/assets/skills/javascript.png"
             name="JavaScript"
             type="Lenguaje"
           />
           <Skill
-            icon="src/assets/about_me/skills/rust.png"
+            icon="/assets/skills/rust.png"
             name="Rust"
             type="Lenguaje"
           />
@@ -123,52 +124,52 @@ export default function AboutMe() {
         <h3>Herramientas</h3>
         <div className={style.skils}>
           <Skill
-            icon="src/assets/about_me/skills/nodejs.png"
+            icon="/assets/skills/nodejs.png"
             name="Node.js"
             type="Entorno de ejecución"
           />
           <Skill
-            icon="src/assets/about_me/skills/docker.png"
+            icon="/assets/skills/docker.png"
             name="Docker"
             type="Herramienta"
           />
           <Skill
-            icon="src/assets/about_me/skills/githubactions.png"
+            icon="/assets/skills/githubactions.png"
             name="GitHub Actions"
             type="Herramienta"
           />
           <Skill
-            icon="src/assets/about_me/skills/git.png"
+            icon="/assets/skills/git.png"
             name="Git"
             type="Herramienta"
           />
           <Skill
-            icon="src/assets/about_me/skills/firebase.png"
+            icon="/assets/skills/firebase.png"
             name="Firebase"
             type="Plataforma Cloud / BaaS"
           />
           <Skill
-            icon="src/assets/about_me/skills/postman.png"
+            icon="/assets/skills/postman.png"
             name="Postman"
             type="Herramienta para APIs"
           />
           <Skill
-            icon="src/assets/about_me/skills/figma.png"
+            icon="/assets/skills/figma.png"
             name="Figma"
             type="Diseño UI/UX"
           />
           <Skill
-            icon="src/assets/about_me/skills/vscode.png"
+            icon="/assets/skills/vscode.png"
             name="Visual Studio Code"
             type="IDE"
           />
           <Skill
-            icon="src/assets/about_me/skills/android_studio.png"
+            icon="/assets/skills/android_studio.png"
             name="Android Studio"
             type="IDE"
           />
           <Skill
-            icon="src/assets/about_me/skills/blender.png"
+            icon="/assets/skills/blender.png"
             name="Blender"
             type="Modelado 3D"
           />
@@ -176,28 +177,28 @@ export default function AboutMe() {
         <h3>Conocimiento de sistemas</h3>
         <div className={style.skils}>
           <Skill
-            icon="src/assets/about_me/skills/windows.webp"
+            icon="/assets/skills/windows.webp"
             name="Windows"
             type="Sistema operativo"
           />
           <Skill
-            icon="src/assets/about_me/skills/macos.png"
+            icon="/assets/skills/macos.png"
             name="macOS"
             type="Sistema operativo"
           />
           <Skill
-            icon="src/assets/about_me/skills/linux.png"
+            icon="/assets/skills/linux.png"
             name="Linux"
             type="Sistema operativo"
           />
 
           <Skill
-            icon="src/assets/about_me/skills/bash.png"
+            icon="/assets/skills/bash.png"
             name="Bash"
             type="Shell / Scripting"
           />
           <Skill
-            icon="src/assets/about_me/skills/wmware.png"
+            icon="/assets/skills/wmware.png"
             name="VMware"
             type="Virtualización"
           />
@@ -205,17 +206,17 @@ export default function AboutMe() {
         <h3>Sistemas y soporte TI</h3>
         <div className={style.skils}>
           <Skill
-            icon="src/assets/about_me/skills/redes.png"
+            icon="/assets/skills/redes.png"
             name="Redes"
             type="Configuración y diagnóstico"
           />
           <Skill
-            icon="src/assets/about_me/skills/hardware.png"
+            icon="/assets/skills/hardware.png"
             name="Hardware y perifericos"
             type="Instalación y soporte"
           />
           <Skill
-            icon="src/assets/about_me/skills/soporte_ti.png"
+            icon="/assets/skills/soporte_ti.png"
             name="Soporte TI"
             type="Resolución de incidencias"
           />
