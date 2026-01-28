@@ -7,7 +7,7 @@ import FloatingArrow from "../../components/floatingarrow/FloatingArrow.jsx";
 import logoKufta from "../../assets/logo/kufta_reverted.png";
 import logoKuftaPercha from "../../assets/logo/kufta_icon_reverted.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
-import Contactme from "../../components/contactme/ContactMe.jsx";
+import Contactme from "../../components/contactme/Contactme.jsx";
 
 const title = "Portafolio";
 

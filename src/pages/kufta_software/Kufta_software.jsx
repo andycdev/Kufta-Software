@@ -12,7 +12,7 @@ import styles from "./kufta_software.module.css";
 import portatil from "../../assets/kufta_software/pc_code.png";
 import Container_info from "../../components/container_info/Container_info";
 import HowDoCard from "../../components/howdo_cards/HowDoCard.jsx";
-import Contactme from "../../components/contactme/ContactMe.jsx";
+import Contactme from "../../components/contactme/Contactme.jsx";
 
 export default function Kufta_software() {
   return (
