@@ -1,84 +1,94 @@
-// App.jsx
-import { useState, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import logo from "./assets/kufta_banner_reverted.png";
-import KuftaSoftware from "./pages/kufta_software/Kufta_software";
-import Servicios from "./pages/servicios/Servicios";
-import Portafolio from "./pages/portafolio/Portafolio";
-import SobreMi from "./pages/sobremi/SobreMi";
-import "./App.css";
+import { useEffect, useState } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
-const pages = [
-  { name: "Kufta Software", component: <KuftaSoftware /> },
-  // { name: "Servicios", component: <Servicios /> },
-  { name: "Portafolio", component: <Portafolio /> },
-  { name: "Sobre mí", component: <SobreMi /> },
-];
+import Header from "./components/header/header.jsx";
+import KuftaSoftware from "./pages/kufta_software/Kufta_software.jsx";
+import Portfolio from "./pages/portfolio/Portfolio.jsx";
+import ContactMe from "./components/contactme/Contactme.jsx";
+import AboutMe from "./pages/aboutme/AboutMe.jsx";
+
+const routes = ["/", "/portfolio", "/aboutme"];
+
+const getInitialIndex = (pathname) => {
+  const index = routes.indexOf(pathname);
+  return index === -1 ? 0 : index;
+};
+
+const pageVariants = {
+  initial: { x: "100vw", opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  exit: { x: "-100vw", opacity: 0 },
+};
 
 function App() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-    setIsOpen(false);
+  const [currentIndex, setCurrentIndex] = useState(() =>
+    getInitialIndex(location.pathname),
+  );
+
+  useEffect(() => {
+    setCurrentIndex(getInitialIndex(location.pathname));
+  }, [location.pathname]);
+
+  const handleNavigate = (index) => {
+    navigate(routes[index]);
   };
 
   return (
     <div className="app">
-      {/* NAVBAR FIJO */}
-      <nav className="navbar">
-        <div className="logo">
-          <img src={logo} alt="Kufta Software" />
-        </div>
+      <Header currentIndex={currentIndex} onNavigate={handleNavigate} />
 
-        <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
-          {pages.map((page, i) => (
-            <li key={i}>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  goToSlide(i);
-                }}
-                className={currentIndex === i ? "active" : ""}
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ type: "spring", stiffness: 200, damping: 25 }}
               >
-                {page.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+                <KuftaSoftware />
+              </motion.div>
+            }
+          />
 
+          <Route
+            path="/portfolio"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              >
+                <Portfolio />
+              </motion.div>
+            }
+          />
 
-        <a href="https://wa.me/573012717380" className="cta-button">
-          Hablemos
-        </a>
-
-        <div
-          className={`hamburger ${isOpen ? "active" : ""}`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </nav>
-
-      {/* CONTENIDO HORIZONTAL */}
-      <div className="slider-container" ref={containerRef}>
-        <motion.div
-          className="slider"
-          style={{ x: -currentIndex * 100 + "vw" }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        >
-          {pages.map((page, i) => (
-            <div key={i} className="slide">
-              {page.component}
-            </div>
-          ))}
-        </motion.div>
-      </div>
+          <Route
+            path="/aboutme"
+            element={
+              <motion.div
+                variants={pageVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ type: "spring", stiffness: 200, damping: 25 }}
+              >
+                <AboutMe />
+              </motion.div>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
     </div>
   );
 }

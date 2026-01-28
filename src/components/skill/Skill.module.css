@@ -1,0 +1,82 @@
+/* Skill.module.css */
+.skill {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+
+  background: linear-gradient(
+    135deg,
+    rgba(10, 118, 118, 0.55),
+    rgba(0, 131, 131, 0.25)
+  );
+
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.18),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.35);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.skill::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+.skill:hover::before {
+  opacity: 1;
+}
+.skill > * {
+  position: relative;
+  z-index: 2;
+  transition:
+    filter 0.35s ease,
+    color 0.35s ease;
+}
+.skill:hover > * {
+  filter: brightness(0) invert(1);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+.skill_name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.skill_type {
+  font-size: 16px;
+  color: rgba(64, 64, 64, 0.8);
+}

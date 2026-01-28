@@ -1,9 +1,10 @@
+/* Index.css */
+
 :root {
   --primary-color: #008383;
   --secondary-color: #00b3b3;
   --background-color: #f8f9fa;
   --text-color: #222;
-  --text-light: #555;
 }
 
 * {
@@ -12,13 +13,28 @@
   box-sizing: border-box;
 }
 
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background-color);
+  height: auto;
+  /* overflow-x: hidden; */
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  line-height: 1.6;
+.app {
+  /* overflow-x: hidden; */
+}
+
+/* El slider SOLO es un carril visual */
+.slider {
+  display: flex;
+  width: 100vw;
+}
+
+/* Cada slide ES UNA PÁGINA NORMAL */
+.slide {
+  width: 100vw;
+  flex-shrink: 0;
 }

@@ -1,0 +1,142 @@
+.page_wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+}
+
+.ready_for_dreams {
+  padding: 0 6%;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.group_title {
+  width: 50%;
+}
+.group_title h4 {
+  font-weight: 600;
+  color: grey;
+  height: 1px;
+}
+.group_title h1 {
+  margin: 20px 0;
+  font-size: 4.7rem;
+  font-weight: 700;
+  line-height: 4rem;
+  background: linear-gradient(to bottom, var(--secondary-color), #000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.group_title p {
+  font-size: 1.3rem;
+}
+
+.ready_for_dreams img {
+  position: relative;
+  display: flex;
+  height: 70vh;
+  width: auto;
+}
+
+.who_is_kufta {
+  margin-top: 5%;
+  width: 80%;
+  max-width: 1000px;
+  text-align: justify;
+}
+.who_is_kufta h2 {
+  text-align: center;
+  font-size: 4rem;
+}
+.who_is_kufta p {
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+.how_do {
+  margin-top: 5%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--background-color) 0%,
+    rgba(255, 255, 255, 0.346) 10%,
+    rgba(0, 179, 179, 0.25) 30%,
+    rgba(0, 131, 131, 0.85) 100%
+  );
+  padding: 3rem 0;
+}
+
+.how_do_title {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 4rem;
+}
+
+.containers_how_do {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .containers_how_do {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 0 6%;
+  }
+
+  .howCard {
+    height: auto;
+  }
+
+  .how_do_title {
+    font-size: 2.6rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ready_for_dreams {
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 2.5rem;
+    height: auto;
+    padding: 4rem 6%;
+    text-align: center;
+  }
+
+  .group_title {
+    width: 100%;
+  }
+
+  .group_title h1 {
+    font-size: 3rem;
+    line-height: 3.2rem;
+  }
+
+  .group_title p {
+    font-size: 1.15rem;
+  }
+
+  .ready_for_dreams img {
+    height: 42vh;
+    max-width: 100%;
+  }
+
+  .who_is_kufta h2 {
+    text-align: center;
+    font-size: 3rem;
+  }
+}

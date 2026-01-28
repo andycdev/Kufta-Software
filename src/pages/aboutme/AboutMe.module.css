@@ -1,0 +1,281 @@
+/* Aboutme.module.css */
+.aboutme_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 8%;
+}
+
+.me {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+  height: 100vh;
+  overflow-x: hidden;
+
+}
+.photo_wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin-right: 150px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 1.5px solid var(--primary-color);
+  --radius: 150px;
+}
+
+.photo_wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -5rem; /* expande el glow */
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 179, 179, 0.701),
+    rgba(0, 179, 179, 0.233),
+    transparent 70%
+  );
+  filter: blur(30px);
+  z-index: 0;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+}
+
+.photo_wrapper img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.761),
+    rgba(0, 179, 179, 0.694)
+  );
+  transform: translate(-50%, -50%);
+  animation: emit 6s infinite ease-out;
+  opacity: 0;
+}
+
+@keyframes emit {
+  0% {
+    transform: translate(calc(-10% + var(--sx)), calc(-10% + var(--sy)))
+      scale(0.3);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)))
+      scale(1.4);
+    opacity: 0;
+  }
+}
+
+.b1 {
+  width: 18px;
+  height: 18px;
+
+  --sx: -200px;
+  --sy: -80px;
+
+  --x: -300px;
+  --y: -100px;
+
+  animation-duration: 5s;
+}
+
+.b2 {
+  width: 25px;
+  height: 25px;
+  --sx: 200px;
+  --sy: -60px;
+  --x: 300px;
+  --y: -100px;
+  animation-duration: 6.5s;
+}
+
+.b3 {
+  width: 15px;
+  height: 15px;
+  --sx: -100px;
+  --sy: 100px;
+  --x: -160px;
+  --y: 300px;
+  animation-duration: 4.8s;
+}
+
+.b4 {
+  width: 22px;
+  height: 22px;
+  --sx: 100px;
+  --sy: 100px;
+  --x: 220px;
+  --y: 320px;
+  animation-duration: 6s;
+}
+
+.b5 {
+  width: 30px;
+  height: 30px;
+  --sx: 0px;
+  --sy: -200px;
+  --x: 0px;
+  --y: -320px;
+  animation-duration: 7s;
+}
+
+.column_text {
+  display: flex;
+  flex-direction: column;
+}
+
+.column_text h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--secondary-color);
+}
+.column_text p {
+  font-size: 1.2rem;
+}
+
+.iknow {
+  display: flex;
+  flex-direction: column;
+}
+.iknow h2 {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+.iknow p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.iknow h3 {
+  padding: 4rem 0;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.skils {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.line {
+  padding: 1px 0px;
+  margin: 4rem 0;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: rgba(22, 177, 149, 0.26);
+}
+.my_route {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+
+  min-height: 100vh;
+  padding: 4rem 0;
+}
+.route_left {
+  position: sticky;
+  top: 200px; /* ajusta según tu header */
+
+  align-self: start;
+
+  height: fit-content;
+}
+.route_right {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.route_item {
+  padding: 2rem;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 131, 131, 0.25),
+    rgba(0, 131, 131, 0.12)
+  );
+
+  backdrop-filter: blur(10px);
+  color: black;
+}
+
+@media (max-width: 1024px) {
+  .aboutme_wrapper {
+    padding-top: 120px;
+  }
+  .me {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo_wrapper {
+    width: 280px;
+    height: 280px;
+    margin-right: 0;
+    margin-bottom: 3rem;
+  }
+
+  .column_text h1 {
+    font-size: 2rem;
+  }
+  .skils {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+  }
+
+  .my_route {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .route_left {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .skils {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+
+  .my_route {
+    padding: 2.5rem 0;
+  }
+
+  .route_left h2 {
+    font-size: 1.6rem;
+  }
+}

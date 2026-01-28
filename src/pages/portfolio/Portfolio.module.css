@@ -1,0 +1,273 @@
+/* Portfolio.module.css */
+
+.portfolio_wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 160px;
+}
+
+.intro_porftolio {
+  height: 100vh;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.intro_porftolio p {
+  font-size: 1.3rem;
+}
+
+.title {
+  font-size: 4rem;
+  display: flex;
+}
+
+.letter {
+  display: inline-block;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 0px transparent;
+  }
+  50% {
+    text-shadow: 0 0 20px var(--primary-color);
+  }
+  100% {
+    text-shadow: 0 0 0px transparent;
+  }
+}
+
+.title {
+  animation: glow 2s ease-out 0.9s;
+}
+
+.intro_porftolio p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.row_containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.row_containers {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* separación entre los contenedores */
+  margin-top: 3rem;
+  flex-wrap: wrap; /* para que se acomoden en móviles */
+}
+
+.glass_container {
+  width: 250px;
+  height: 250px;
+  background: rgba(0, 131, 131, 0.2); /* translúcido con tu color */
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 131, 131, 0.4); /* borde sutil en tu color */
+  box-shadow: 0 8px 32px rgba(0, 131, 131, 0.2); /* sombra suave */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    border 0.3s ease-in;
+}
+
+.glass_container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 40px rgba(0, 131, 131, 0.4); /* resplandor más intenso */
+  border: 1px solid rgba(0, 131, 131, 0.6);
+}
+
+.glass_container img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.glass_container p {
+  color: black;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.line {
+  padding: 1px 0px;
+  margin: 10px 0;
+  width: 80%;
+  border-radius: 1rem;
+  background-color: rgba(22, 177, 149, 0.26);
+}
+
+.kufta_software,
+.kufta_percha {
+  padding: 3rem;
+  text-align: center;
+  margin: 0 8%;
+
+}
+
+.kufta_software p,
+.kufta_percha p{
+  font-size: 1.2rem;
+}
+
+.kufta_software h2,
+.kufta_percha h2 {
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 2rem;
+}
+.kufta_software img {
+  width: 80vw;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 22px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.14);
+}
+.row_img_kufta_percha {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.row_img_kufta_percha img {
+  width: 20vw;
+  height: auto;
+  margin: 3rem 2rem;
+}
+
+.row_kufta_software_info,
+.row_kufta_percha_info {
+  display: flex;
+  flex-direction: row; /* dos columnas lado a lado */
+  gap: 2rem; /* espacio entre columnas */
+  justify-content: center; /* centrado horizontal */
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.row_kufta_software_info p,
+.row_kufta_percha_info p {
+  flex: 1; /* cada columna ocupa el mismo espacio */
+  min-width: 250px; /* evita que se colapse demasiado en pantallas grandes */
+  line-height: 1.6;
+}
+
+.click_to {
+  background-color: rgba(227, 227, 227, 0.618);
+  border-radius: 22px;
+  padding: 2rem 0;
+  margin: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.205);
+}
+.click_to a {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+.click_to a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .intro_porftolio {
+    width: 100%;
+    height: auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .intro_porftolio p {
+    font-size: 0.95rem;
+  }
+
+  .row_containers {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .glass_container {
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .kufta_software,
+  .kufta_percha {
+    margin: 0;
+  }
+
+  .kufta_percha p,
+  .kufta_software p {
+    text-align: justify;
+  }
+
+  .kufta_software h2,
+  .kufta_percha h2 {
+    font-size: 2.2rem;
+  }
+
+  .kufta_software img {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .row_img_kufta_percha {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .row_img_kufta_percha img {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  .row_kufta_software_info,
+  .row_kufta_percha_info {
+    text-align: justify;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0;
+  }
+
+  .row_kufta_software_info p,
+  .row_kufta_percha_info p {
+    text-align: justify;
+  }
+
+  .click_to {
+    margin: 2rem 0;
+    padding: 1.5rem;
+  }
+
+  .click_to a {
+    font-size: 0.95rem;
+    display: inline-block;
+  }
+}
