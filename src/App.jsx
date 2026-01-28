@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/header/Header.jsx";
 import KuftaSoftware from "./pages/kufta_software/Kufta_software.jsx";
 import Portfolio from "./pages/portfolio/Portfolio.jsx";
-import ContactMe from "./components/contactme/ContactMe.jsx";
 import AboutMe from "./pages/aboutme/AboutMe.jsx";
 
 const routes = ["/", "/portfolio", "/aboutme"];
