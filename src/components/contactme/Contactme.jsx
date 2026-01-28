@@ -6,7 +6,7 @@ import {
   FiGithub,
   FiLinkedin,
 } from "react-icons/fi";
-import style from "./contactme.module.css";
+import style from "./Contactme.module.css";
 
 export default function Contactme() {
   const [email, setEmail] = useState("");

@@ -1,7 +1,7 @@
 // AboutMe.jsx
 import React from "react";
 import style from "./AboutMe.module.css";
-import ContactMe from "../../components/contactme/ContactMe";
+import ContactMe from "../../components/contactme/ContactMe.jsx";
 import Skill from "../../components/skill/Skill.jsx";
 
 export default function AboutMe() {

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import style from "./container_info.module.css";
+import style from "./Container_info.module.css";
 import InfoCard from "./InfoCard";
 import mobileImage from "../../assets/kufta_software/mobile_app.png";
 import desktopImage from "../../assets/kufta_software/pc_app.png";

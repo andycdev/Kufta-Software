@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import Logo from "../../assets/logo/banner_logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 
