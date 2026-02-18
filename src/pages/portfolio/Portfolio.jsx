@@ -8,9 +8,10 @@ import logoKufta from "../../assets/logo/kufta_reverted.png";
 import logoKuftaPercha from "../../assets/logo/kufta_icon_reverted.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
 import Contactme from "../../components/contactme/Contactme.jsx";
-import KuftaP1 from "../../assets/portfolio/kufta_percha1.png"
-import KuftaP2 from "../../assets/portfolio/kufta_percha2.png"
-import KuftaP3 from "../../assets/portfolio/kufta_percha3.png"
+import KuftaP1 from "../../assets/portfolio/Scr1.jpg"
+import KuftaP2 from "../../assets/portfolio/Scr2.jpg"
+import KuftaP3 from "../../assets/portfolio/Scr3.jpg"
+import KuftaP4 from "../../assets/portfolio/Scr4.jpg"
 
 const title = "Portafolio";
 
@@ -181,8 +182,8 @@ export default function Portfolio() {
           </p>
         </div>
         <div className={style.click_to}>
-          <a href="https://github.com/andycdev/kufta-percha/releases/tag/v1.0.0">
-            Descarga la aplicación aquí y prueba la versión 1.0.0 de{" "}
+          <a href="https://github.com/andycdev/kufta-percha/releases/download/v.1.1.0/kufta_percha_v.1.1.0.apk">
+            Descarga la aplicación aquí y prueba la versión 1.1.0 de{" "}
             <strong>Kufta Percha</strong>
           </a>
         </div>

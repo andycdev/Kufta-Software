@@ -5,6 +5,7 @@ import {
   FiMessageSquare,
   FiGithub,
   FiLinkedin,
+  FiInstagram,
 } from "react-icons/fi";
 import style from "./Contactme.module.css";
 
@@ -90,14 +91,6 @@ export default function Contactme() {
               <FiMail />
               <span>Mi correo</span>
             </a>
-            <a
-              href="https://github.com/andycdev"
-              target="_blank"
-              className={style.social_card}
-            >
-              <FiGithub />
-              <span>Portafolio de Github</span>
-            </a>
 
             <a
               href="https://www.linkedin.com/in/andres-cuevas-a6612139a/"
@@ -106,6 +99,14 @@ export default function Contactme() {
             >
               <FiLinkedin />
               <span>Perfil de linkedin</span>
+            </a>
+            <a
+              href="https://www.instagram.com/kufta.software"
+              target="_blank"
+              className={style.social_card}
+            >
+              <FiInstagram />
+              <span>Perfil de Instagram</span>
             </a>
           </div>
         </div>
