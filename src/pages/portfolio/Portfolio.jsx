@@ -11,7 +11,6 @@ import Contactme from "../../components/contactme/Contactme.jsx";
 import KuftaP1 from "../../assets/portfolio/Scr1.jpg"
 import KuftaP2 from "../../assets/portfolio/Scr2.jpg"
 import KuftaP3 from "../../assets/portfolio/Scr3.jpg"
-import KuftaP4 from "../../assets/portfolio/Scr4.jpg"
 
 const title = "Portafolio";
 
