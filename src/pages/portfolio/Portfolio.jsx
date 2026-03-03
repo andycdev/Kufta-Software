@@ -110,17 +110,6 @@ export default function Portfolio() {
             <p>Kufta Percha</p>
           </motion.div>
 
-          <motion.div
-            className={style.glass_container}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            onClick={() =>
-              finproRef.current.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            <img src={logoFinPro} alt="FinPro Logo" />
-            <p>FinPro</p>
-          </motion.div>
         </div>
       </div>
       <div className={style.line} ref={kuftaSoftwareRef}></div>
@@ -191,26 +180,6 @@ export default function Portfolio() {
             <strong>Kufta Percha</strong>
           </a>
         </div>
-      </div>
-      <div className={style.line} ref={finproRef}></div>
-
-      <div className={style.finpro}>
-        <h2>FinPro</h2>
-        <p>
-          <strong>FinPro</strong> es una aplicación móvil diseñada para
-          transformar la manera en que gestionas tu dinero. Te permite registrar
-          y categorizar ingresos y gastos, crear presupuestos personalizados y
-          visualizar tu flujo de efectivo en tiempo real. Integra herramientas
-          de análisis financiero que te ayudan a identificar patrones de
-          consumo, optimizar tus hábitos y tomar decisiones basadas en datos.
-          Además, facilita la planificación de metas de ahorro, el seguimiento
-          de objetivos financieros y el monitoreo constante de tu salud
-          económica, todo desde una interfaz intuitiva, moderna y segura.
-        </p>
-      </div>
-      <div className={style.finproGradient}>
-        <h3>En desarrollo</h3>
-        <p>Muy pronto disponible.</p>
       </div>
 
       <div className={style.line}></div>
