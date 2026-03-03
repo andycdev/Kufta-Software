@@ -117,20 +117,22 @@
 }
 
 .kufta_software,
-.kufta_percha {
+.kufta_percha,
+.finpro {
   padding: 3rem;
   text-align: center;
   margin: 0 8%;
-
 }
 
 .kufta_software p,
-.kufta_percha p{
+.kufta_percha p,
+.finpro p {
   font-size: 1.2rem;
 }
 
 .kufta_software h2,
-.kufta_percha h2 {
+.kufta_percha h2,
+.finpro h2 {
   text-align: center;
   font-size: 3rem;
   padding-bottom: 2rem;
@@ -167,10 +169,26 @@
 }
 
 .row_kufta_software_info p,
-.row_kufta_percha_info p {
+.row_kufta_percha_info p,
+.finpro p {
   flex: 1; /* cada columna ocupa el mismo espacio */
   min-width: 250px; /* evita que se colapse demasiado en pantallas grandes */
   line-height: 1.6;
+}
+
+.finproGradient {
+  width: 100%;
+  padding: 150px 20px;
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color) 0%,
+    #ffffff00 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .click_to {
@@ -225,12 +243,14 @@
   }
 
   .kufta_percha p,
-  .kufta_software p {
+  .kufta_software p,
+  .finpro p {
     text-align: justify;
   }
 
   .kufta_software h2,
-  .kufta_percha h2 {
+  .kufta_percha h2,
+  .finpro h2 {
     font-size: 2.2rem;
   }
 

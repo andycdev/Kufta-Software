@@ -5,12 +5,13 @@ import { useEffect, useRef } from "react";
 import style from "./Portfolio.module.css";
 import FloatingArrow from "../../components/floatingarrow/FloatingArrow.jsx";
 import logoKufta from "../../assets/logo/kufta_reverted.png";
-import logoKuftaPercha from "../../assets/logo/kufta_icon_reverted.png";
+import logoKuftaPercha from "../../assets/portfolio/kufta_percha.png";
+import logoFinPro from "../../assets/portfolio/finpro.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
 import Contactme from "../../components/contactme/Contactme.jsx";
-import KuftaP1 from "../../assets/portfolio/Scr1.jpg"
-import KuftaP2 from "../../assets/portfolio/Scr2.jpg"
-import KuftaP3 from "../../assets/portfolio/Scr3.jpg"
+import KuftaP1 from "../../assets/portfolio/Scr1.jpg";
+import KuftaP2 from "../../assets/portfolio/Scr2.jpg";
+import KuftaP3 from "../../assets/portfolio/Scr3.jpg";
 
 const title = "Portafolio";
 
@@ -44,6 +45,7 @@ export default function Portfolio() {
   const location = useLocation();
   const kuftaSoftwareRef = useRef(null);
   const kuftaPerchaRef = useRef(null);
+  const finproRef = useRef(null);
 
   useEffect(() => {
     if (location.pathname === "/portfolio") {
@@ -107,6 +109,18 @@ export default function Portfolio() {
             <img src={logoKuftaPercha} alt="Kufta Percha Logo" />
             <p>Kufta Percha</p>
           </motion.div>
+
+          <motion.div
+            className={style.glass_container}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() =>
+              finproRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <img src={logoFinPro} alt="FinPro Logo" />
+            <p>FinPro</p>
+          </motion.div>
         </div>
       </div>
       <div className={style.line} ref={kuftaSoftwareRef}></div>
@@ -148,18 +162,9 @@ export default function Portfolio() {
           como desarrollador.
         </p>
         <div className={style.row_img_kufta_percha}>
-          <img
-            src={KuftaP1}
-            alt="Kufta Percha"
-          />
-          <img
-            src={KuftaP2}
-            alt="Kufta Percha"
-          />
-          <img
-            src={KuftaP3}
-            alt="Kufta Percha"
-          />
+          <img src={KuftaP1} alt="Kufta Percha" />
+          <img src={KuftaP2} alt="Kufta Percha" />
+          <img src={KuftaP3} alt="Kufta Percha" />
         </div>
         <div className={style.row_kufta_percha_info}>
           <p>
@@ -187,6 +192,27 @@ export default function Portfolio() {
           </a>
         </div>
       </div>
+      <div className={style.line} ref={finproRef}></div>
+
+      <div className={style.finpro}>
+        <h2>FinPro</h2>
+        <p>
+          <strong>FinPro</strong> es una aplicación móvil diseñada para
+          transformar la manera en que gestionas tu dinero. Te permite registrar
+          y categorizar ingresos y gastos, crear presupuestos personalizados y
+          visualizar tu flujo de efectivo en tiempo real. Integra herramientas
+          de análisis financiero que te ayudan a identificar patrones de
+          consumo, optimizar tus hábitos y tomar decisiones basadas en datos.
+          Además, facilita la planificación de metas de ahorro, el seguimiento
+          de objetivos financieros y el monitoreo constante de tu salud
+          económica, todo desde una interfaz intuitiva, moderna y segura.
+        </p>
+      </div>
+      <div className={style.finproGradient}>
+        <h3>En desarrollo</h3>
+        <p>Muy pronto disponible.</p>
+      </div>
+
       <div className={style.line}></div>
 
       <Contactme />
