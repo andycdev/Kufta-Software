@@ -228,7 +228,7 @@
   );
 
   backdrop-filter: blur(10px);
-  color: black;
+  color: var(--text-color);
 }
 
 @media (max-width: 1024px) {

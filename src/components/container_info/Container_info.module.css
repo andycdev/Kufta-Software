@@ -45,13 +45,11 @@
   min-width: 60vw;
   height: 100%;
   border-radius: 18px;
-  background: white;
-
+  background: var(--card-bg);
   padding: 3rem;
   display: flex;
   flex-direction: column;
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--card-shadow);
 }
 .row {
   display: flex;
@@ -81,7 +79,7 @@
 .description {
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #333;
+  color: var(--card-text-secondary);
   font-weight: 400;
 }
 
@@ -121,19 +119,17 @@
 
   background: linear-gradient(
     135deg,
-    rgba(0, 179, 179, 0.35),
-    rgba(0, 131, 131, 0.15)
+    var(--control-bg-start),
+    var(--control-bg-end)
   );
 
   backdrop-filter: blur(14px) saturate(160%);
   -webkit-backdrop-filter: blur(14px) saturate(160%);
 
-  border: 1px solid rgba(0, 179, 179, 0.45);
-  color: #053333;
+  border: 1px solid var(--control-border);
+  color: var(--control-text);
 
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.45),
-    0 10px 30px rgba(0, 131, 131, 0.25);
+  box-shadow: var(--control-shadow);
 
   transition:
     transform 0.25s ease,

@@ -70,12 +70,12 @@
 .glass_container {
   width: 250px;
   height: 250px;
-  background: rgba(0, 131, 131, 0.2); /* translúcido con tu color */
+  background: var(--glass-bg);
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   border-radius: 20px;
-  border: 1px solid rgba(0, 131, 131, 0.4); /* borde sutil en tu color */
-  box-shadow: 0 8px 32px rgba(0, 131, 131, 0.2); /* sombra suave */
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,8 +90,8 @@
 
 .glass_container:hover {
   transform: scale(1.05);
-  box-shadow: 0 12px 40px rgba(0, 131, 131, 0.4); /* resplandor más intenso */
-  border: 1px solid rgba(0, 131, 131, 0.6);
+  box-shadow: var(--glass-hover-shadow);
+  border: 1px solid var(--glass-hover-border);
 }
 
 .glass_container img {
@@ -102,7 +102,7 @@
 }
 
 .glass_container p {
-  color: black;
+  color: var(--text-color);
   text-align: center;
   font-weight: 500;
   font-size: 1rem;
@@ -117,7 +117,7 @@
 }
 
 .kufta_software,
-.kufta_percha{
+.kufta_percha {
   padding: 3rem;
   text-align: center;
   margin: 0 8%;
@@ -129,7 +129,7 @@
 }
 
 .kufta_software h2,
-.kufta_percha h2{
+.kufta_percha h2 {
   text-align: center;
   font-size: 3rem;
   padding-bottom: 2rem;
@@ -171,7 +171,6 @@
   min-width: 250px; /* evita que se colapse demasiado en pantallas grandes */
   line-height: 1.6;
 }
-
 
 .click_to {
   background-color: rgba(227, 227, 227, 0.618);
