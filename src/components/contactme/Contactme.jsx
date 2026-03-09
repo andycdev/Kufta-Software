@@ -17,6 +17,9 @@ export default function Contactme() {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const [showToast, setShowToast] = useState(false);
   const [hideToast, setHideToast] = useState(false);
+  const [toastMsg, setToastMsg] = useState("");
+  const [isError, setIsError] = useState(false); // Opcional: para cambiar el color si falla
+  const [isLoading, setIsLoading] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -38,7 +41,6 @@ export default function Contactme() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const validationErrors = validate();
 
     if (Object.keys(validationErrors).length > 0) {
@@ -47,46 +49,48 @@ export default function Contactme() {
     }
 
     setErrors({});
+    setIsLoading(true);
 
     try {
-      const res = await fetch(
-        "https://kufta-software-backend.onrender.com/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            message,
-          }),
-        },
-      );
+     const res = await fetch("/api/contact", { // <--- Ruta relativa para Vercel
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
 
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error || "Error enviando mensaje");
+        // Si el servidor responde con error (ej. 400 o 500)
+        throw new Error(data.error || "Algo salió mal");
       }
 
+      // --- ÉXITO ---
+      setToastMsg("¡Mensaje enviado con éxito 🚀!");
+      setIsError(false);
       setName("");
       setEmail("");
       setMessage("");
-
-      setShowToast(true);
-
-      setTimeout(() => {
-        setHideToast(true);
-      }, 2500);
-
-      setTimeout(() => {
-        setShowToast(false);
-        setHideToast(false);
-      }, 3200);
-    } catch (error) {
+   } catch (error) {
       console.error(error);
+      setToastMsg(error.message || "Error de conexión ❌");
+      setIsError(true);
+    } finally {
+      setIsLoading(false);
+      triggerToast();
     }
+  };
+
+  // Función auxiliar para no repetir los timeouts
+  const triggerToast = () => {
+    setShowToast(true);
+    setHideToast(false);
+
+    setTimeout(() => setHideToast(true), 2500);
+    setTimeout(() => {
+      setShowToast(false);
+      setHideToast(false);
+    }, 3200);
   };
 
   return (
@@ -137,7 +141,13 @@ export default function Contactme() {
               <span className={style.error}>{errors.message}</span>
             )}
 
-            <button type="submit">Enviar mensaje</button>
+            <button type="submit" disabled={isLoading}>
+              {isLoading ? (
+                <div className={style.spinner}></div>
+              ) : (
+                "Enviar mensaje"
+              )}
+            </button>
           </div>
           <div className={style.column2}>
             <a
@@ -177,8 +187,10 @@ export default function Contactme() {
       </footer>
 
       {showToast && (
-        <div className={`${style.toast} ${hideToast ? style.toastHide : ""}`}>
-          ¡Mensaje enviado correctamente 🚀!
+        <div
+          className={`${style.toast} ${hideToast ? style.toastHide : ""} ${isError ? style.toastError : ""}`}
+        >
+          {toastMsg}
         </div>
       )}
     </>
