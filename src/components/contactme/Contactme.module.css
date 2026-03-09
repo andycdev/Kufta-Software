@@ -6,6 +6,8 @@
 }
 
 .column1 {
+  display: flex;
+  flex-direction: column;
   flex: 3;
 }
 
@@ -47,6 +49,7 @@
   font-size: 1.1rem;
   width: 100%;
   outline: none;
+  color: var(--text-color);
 }
 
 button {
@@ -159,9 +162,56 @@ footer {
   background-color: var(--line-bg);
 }
 .text_footer {
-  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
   font-size: 0.9rem;
   color: var(--footer-text);
+}
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(
+    -50%
+  ); /* Quitamos el translateY de aquí para que no choque */
+  background: var(--primary-color);
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  z-index: 1000;
+
+  /* Animación de entrada por defecto */
+  animation: toastIn 0.4s ease forwards;
+}
+
+/* Clase que aplicaremos para salir */
+.toastHide {
+  animation: toastOut 0.4s ease forwards;
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(40px);
+  }
 }
 
 @media (max-width: 768px) {

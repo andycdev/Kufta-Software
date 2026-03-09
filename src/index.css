@@ -74,6 +74,10 @@
   --glass-shadow: 0 8px 32px rgba(0, 131, 131, 0.2);
   --glass-hover-border: rgba(0, 131, 131, 0.6);
   --glass-hover-shadow: 0 12px 40px rgba(0, 131, 131, 0.4);
+
+  /* Click to */
+  --click_to-container: rgba(230, 247, 239, 0.618);
+  --click_to-container-shadow: rgba(0, 0, 0, 0.192);
 }
 
 /* Modo oscuro */
@@ -148,6 +152,10 @@
     --glass-shadow: 0 8px 32px rgba(0, 179, 179, 0.25);
     --glass-hover-border: rgba(0, 179, 179, 0.5);
     --glass-hover-shadow: 0 12px 40px rgba(0, 179, 179, 0.45);
+
+    /* Click to */
+    --click_to-container: rgba(47, 47, 47, 0.618);
+  --click_to-container-shadow: rgb(66, 66, 66);
   }
 }
 * {

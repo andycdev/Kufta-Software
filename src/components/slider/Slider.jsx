@@ -1,10 +1,7 @@
 // Slider.jsx
-
-import { motion } from "framer-motion";
 import KuftaSoftware from "../../pages/kufta_software/Kufta_software";
 import Portfolio from "../../pages/portfolio/Portfolio";
 
-const pages = [{ element: <KuftaSoftware /> }, { element: <Portfolio /> }];
 
 export default function Slider({ currentIndex }) {
   return (

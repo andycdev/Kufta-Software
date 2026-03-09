@@ -11,29 +11,82 @@ import style from "./Contactme.module.css";
 
 export default function Contactme() {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState(false);
+  const [errors, setErrors] = useState({});
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const [showToast, setShowToast] = useState(false);
+  const [hideToast, setHideToast] = useState(false);
 
-  const handleSubmit = (e) => {
+  const validate = () => {
+    const newErrors = {};
+
+    if (!name || name.trim().length < 3 || name.trim().length > 50) {
+      newErrors.name = "El nombre debe tener entre 3 y 50 caracteres";
+    }
+
+    if (!emailRegex.test(email)) {
+      newErrors.email = "Correo electrónico inválido";
+    }
+
+    if (!message || message.trim().length < 5 || message.trim().length > 255) {
+      newErrors.message = "El mensaje debe tener entre 5 y 255 caracteres";
+    }
+
+    return newErrors;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) {
-      setError(true);
+    const validationErrors = validate();
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
       return;
     }
 
-    setError(false);
+    setErrors({});
 
-    const subject = encodeURIComponent("Hola Andrés, vengo de Kufta");
-    const body = encodeURIComponent(
-      `Hola Andrés,\n\n` +
-        `Mi nombre es: ${name || "Anónimo"}\n` +
-        `Mi correo es: ${email}\n\n` +
-        `Mensaje:\n${message || "Sin mensaje"}`,
-    );
+    try {
+      const res = await fetch(
+        "https://kufta-software-backend.onrender.com/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            message,
+          }),
+        },
+      );
 
-    window.location.href = `mailto:tech.andresb@gmail.com?subject=${subject}&body=${body}`;
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Error enviando mensaje");
+      }
+
+      setName("");
+      setEmail("");
+      setMessage("");
+
+      setShowToast(true);
+
+      setTimeout(() => {
+        setHideToast(true);
+      }, 2500);
+
+      setTimeout(() => {
+        setShowToast(false);
+        setHideToast(false);
+      }, 3200);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -49,9 +102,12 @@ export default function Contactme() {
                 type="text"
                 placeholder="Nombre"
                 value={name}
+                minLength={3}
+                maxLength={50}
                 onChange={(e) => setName(e.target.value)}
               />
             </div>
+            {errors.name && <span className={style.error}>{errors.name}</span>}
 
             <div className={style.input_group}>
               <FiMail />
@@ -63,21 +119,22 @@ export default function Contactme() {
                 required
               />
             </div>
+            {errors.email && (
+              <span className={style.error}>{errors.email}</span>
+            )}
 
             <div className={style.input_group}>
               <FiMessageSquare />
               <textarea
                 placeholder="Tu mensaje"
                 rows={4}
+                maxLength={255}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
             </div>
-
-            {error && (
-              <span className={style.error}>
-                El correo es obligatorio para enviar el mensaje
-              </span>
+            {errors.message && (
+              <span className={style.error}>{errors.message}</span>
             )}
 
             <button type="submit">Enviar mensaje</button>
@@ -111,7 +168,6 @@ export default function Contactme() {
           </div>
         </div>
       </form>
-
       <footer>
         <div className={style.line}></div>
         <div className={style.text_footer}>
@@ -119,6 +175,12 @@ export default function Contactme() {
           reservados.
         </div>
       </footer>
+
+      {showToast && (
+        <div className={`${style.toast} ${hideToast ? style.toastHide : ""}`}>
+          ¡Mensaje enviado correctamente 🚀!
+        </div>
+      )}
     </>
   );
 }

@@ -3,7 +3,7 @@ import styles from "./Header.module.css";
 import Logo from "../../assets/logo/banner_logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
 
-export default function Header({ currentIndex, onNavigate }) {
+export default function Header({ onNavigate }) {
   const [open, setOpen] = useState(false);
 
   const handleNav = (index) => {

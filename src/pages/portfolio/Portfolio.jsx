@@ -6,12 +6,13 @@ import style from "./Portfolio.module.css";
 import FloatingArrow from "../../components/floatingarrow/FloatingArrow.jsx";
 import logoKufta from "../../assets/logo/kufta_reverted.png";
 import logoKuftaPercha from "../../assets/portfolio/kufta_percha.png";
-import logoFinPro from "../../assets/portfolio/finpro.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
 import Contactme from "../../components/contactme/Contactme.jsx";
 import KuftaP1 from "../../assets/portfolio/Scr1.jpg";
 import KuftaP2 from "../../assets/portfolio/Scr2.jpg";
 import KuftaP3 from "../../assets/portfolio/Scr3.jpg";
+import QrKuftaP from "../../assets/portfolio/qr-code.png";
+import onPlayStore from "../../assets/portfolio/on_play_store.png"
 
 const title = "Portafolio";
 
@@ -45,7 +46,6 @@ export default function Portfolio() {
   const location = useLocation();
   const kuftaSoftwareRef = useRef(null);
   const kuftaPerchaRef = useRef(null);
-  const finproRef = useRef(null);
 
   useEffect(() => {
     if (location.pathname === "/portfolio") {
@@ -109,7 +109,6 @@ export default function Portfolio() {
             <img src={logoKuftaPercha} alt="Kufta Percha Logo" />
             <p>Kufta Percha</p>
           </motion.div>
-
         </div>
       </div>
       <div className={style.line} ref={kuftaSoftwareRef}></div>
@@ -145,10 +144,11 @@ export default function Portfolio() {
       <div className={style.kufta_percha}>
         <h2>Kufta Percha</h2>
         <p>
-          <strong>Kufta Percha</strong> es mi proyecto personal donde desarrollo
-          aplicaciones y herramientas digitales. Aquí muestro mis experimentos,
-          proyectos completos y soluciones que reflejan mi estilo y capacidad
-          como desarrollador.
+          <strong>Kufta Percha</strong> es una aplicación móvil desarrollada en
+          Flutter pensada para organizar tu ropa de forma visual. Permite crear
+          combinaciones completas de prendas como gorra, tronco, piernas y
+          zapatos, facilitando la planificación de outfits para diferentes días
+          u ocasiones.
         </p>
         <div className={style.row_img_kufta_percha}>
           <img src={KuftaP1} alt="Kufta Percha" />
@@ -157,27 +157,37 @@ export default function Portfolio() {
         </div>
         <div className={style.row_kufta_percha_info}>
           <p>
-            <strong>Kufta Percha</strong> es una aplicación móvil desarrollada
-            en Flutter que permite organizar tu ropa, crear combinaciones
-            completas y planificar tus outfits para cualquier ocasión. Incluye
-            una galería interna de prendas con categorías, favoritos y búsqueda,
-            donde cada prenda puede guardarse con nombre, descripción, color,
-            etiquetas, calificación por estrellas y número de usos.
+            Cada prenda puede guardarse en una galería interna con imagen,
+            nombre, descripción, color, etiquetas, calificación por estrellas y
+            registro de uso. Además, las combinaciones pueden asignarse a fechas
+            dentro de un calendario para llevar un control de lo que usas y
+            organizar tu estilo con mayor facilidad.
           </p>
 
           <p>
-            La app también permite crear y editar combinaciones, asignarlas a
-            fechas en un calendario, recibir notificaciones y gestionar todo de
-            forma completamente local usando Hive, sin depender de servicios
-            externos. Además, ofrece personalización del tema y del color
-            principal, brindando una experiencia flexible y adaptada al estilo
-            del usuario.
+            La aplicación funciona completamente de forma local utilizando
+            almacenamiento en el dispositivo con Hive, sin depender de servicios
+            externos. El objetivo es ofrecer una experiencia rápida, privada y
+            personalizable, donde el usuario pueda gestionar su ropa y sus
+            combinaciones de manera simple y visual.
           </p>
         </div>
         <div className={style.click_to}>
-          <a href="https://github.com/andycdev/kufta-percha/releases/download/v.1.1.0/kufta_percha_v.1.1.0.apk">
-            Descarga la aplicación aquí y prueba la versión 1.1.0 de{" "}
-            <strong>Kufta Percha</strong>
+          <h1>¡Descarga Kufta Percha!</h1>
+          <p>Crea tus pintas, organizalas, planificas y disfruta de tú orden.</p>
+
+          <img src={QrKuftaP} alt="QR-code" />
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.kufta.percha"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              // src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png"
+              src={onPlayStore}
+              alt="Disponible en Google Play"
+            />
           </a>
         </div>
       </div>
