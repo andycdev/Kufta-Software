@@ -3,16 +3,23 @@
   display: flex;
   flex-direction: column;
   padding: 10px 8%;
+  width: 100%;
+  box-sizing: border-box;
+  /* Eliminamos overflow-x: hidden de aquí */
 }
-
 .me {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-top: 40px;
-  height: 100vh;
-  overflow-x: hidden;
-
+  min-height: 100vh;
+  overflow: visible; /* IMPORTANTE: Cambia overflow-x: hidden por visible */
+}
+.me,
+.iknow {
+  width: 100%;
+  overflow-x: hidden; /* Aquí atrapamos las burbujas y resplandores */
+  overflow-y: visible; /* Permitimos que el contenido fluya hacia abajo */
 }
 .photo_wrapper {
   position: relative;
@@ -22,38 +29,10 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   border: 1.5px solid var(--primary-color);
-  --radius: 150px;
+  /* Eliminamos cualquier overflow: hidden si lo tuviera */
+  overflow: visible;
 }
 
-.photo_wrapper::before {
-  content: "";
-  position: absolute;
-  inset: -5rem; /* expande el glow */
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(0, 179, 179, 0.701),
-    rgba(0, 179, 179, 0.233),
-    transparent 70%
-  );
-  filter: blur(30px);
-  z-index: 0;
-  animation: glowPulse 6s ease-in-out infinite;
-}
-@keyframes glowPulse {
-  0% {
-    opacity: 0.4;
-    transform: scale(0.95);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 0.4;
-    transform: scale(0.95);
-  }
-}
 
 .photo_wrapper img {
   width: 100%;
@@ -200,17 +179,16 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 3rem;
-
   min-height: 100vh;
   padding: 4rem 0;
+  overflow: visible; /* Vital para que el sticky funcione */
 }
 .route_left {
   position: sticky;
-  top: 200px; /* ajusta según tu header */
-
+  top: 100px; /* Asegúrate de que este valor no sea mayor al alto del viewport */
   align-self: start;
-
   height: fit-content;
+  z-index: 10;
 }
 .route_right {
   display: flex;
@@ -236,9 +214,11 @@
     padding-top: 120px;
   }
   .me {
+    min-height: 0vh;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 8rem;
   }
 
   .photo_wrapper {

@@ -3,7 +3,7 @@ import {
   FiUser,
   FiMail,
   FiMessageSquare,
-  FiGithub,
+  FiFacebook,
   FiLinkedin,
   FiInstagram,
 } from "react-icons/fi";
@@ -52,7 +52,8 @@ export default function Contactme() {
     setIsLoading(true);
 
     try {
-     const res = await fetch("/api/contact", { // <--- Ruta relativa para Vercel
+      const res = await fetch("/api/contact", {
+        // <--- Ruta relativa para Vercel
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
@@ -71,7 +72,7 @@ export default function Contactme() {
       setName("");
       setEmail("");
       setMessage("");
-   } catch (error) {
+    } catch (error) {
       console.error(error);
       setToastMsg(error.message || "Error de conexión ❌");
       setIsError(true);
@@ -151,12 +152,20 @@ export default function Contactme() {
           </div>
           <div className={style.column2}>
             <a
-              href="mailto:tech.andresb@gmail.com"
+              href="https://www.instagram.com/kufta.software"
               target="_blank"
               className={style.social_card}
             >
-              <FiMail />
-              <span>Mi correo</span>
+              <FiInstagram />
+              <span>Instagram</span>
+            </a>
+            <a
+              href="https://web.facebook.com/profile.php?id=61588525134503&locale=es_LA"
+              target="_blank"
+              className={style.social_card}
+            >
+              <FiFacebook />
+              <span>Facebook</span>
             </a>
 
             <a
@@ -165,15 +174,7 @@ export default function Contactme() {
               className={style.social_card}
             >
               <FiLinkedin />
-              <span>Perfil de linkedin</span>
-            </a>
-            <a
-              href="https://www.instagram.com/kufta.software"
-              target="_blank"
-              className={style.social_card}
-            >
-              <FiInstagram />
-              <span>Perfil de Instagram</span>
+              <span>Linkedin</span>
             </a>
           </div>
         </div>

@@ -3,7 +3,7 @@ import React from "react";
 import style from "./AboutMe.module.css";
 import ContactMe from "../../components/contactme/Contactme.jsx";
 import Skill from "../../components/skill/Skill.jsx";
-import Me from "../../assets/about_me/creator.jpg"
+import Me from "../../assets/about_me/creator.jpg";
 
 export default function AboutMe() {
   return (
@@ -54,19 +54,20 @@ export default function AboutMe() {
             name="Jetpack Compose"
             type="Framework (UI para Android)"
           />
-          <Skill
-            icon="/assets/skills/react.png"
-            name="React"
-            type="Librería"
-          />
+          <Skill icon="/assets/skills/react.png" name="React" type="Librería" />
           <Skill
             icon="/assets/skills/django.png"
             name="Django"
             type="Framework"
           />
           <Skill
-            icon="/assets/skills/Expressjs.png"
+            icon="/assets/skills/expressjs.png"
             name="Express.js"
+            type="Framework"
+          />
+          <Skill
+            icon="/assets/skills/angular.png"
+            name="Angular"
             type="Framework"
           />
           <Skill
@@ -74,25 +75,22 @@ export default function AboutMe() {
             name="FastAPI"
             type="Framework"
           />
+          <Skill
+            icon="/assets/skills/spring_boot.png"
+            name="Spring boot"
+            type="Framework"
+          />
         </div>
         <h3>Lenguajes</h3>
         <div className={style.skils}>
-          <Skill
-            icon="/assets/skills/dart.png"
-            name="Dart"
-            type="Lenguaje"
-          />
+          <Skill icon="/assets/skills/dart.png" name="Dart" type="Lenguaje" />
           <Skill
             icon="/assets/skills/kotlin.png"
             name="Kotlin"
             type="Lenguaje"
           />
 
-          <Skill
-            icon="/assets/skills/php.png"
-            name="PHP"
-            type="Lenguaje"
-          />
+          <Skill icon="/assets/skills/php.png" name="PHP" type="Lenguaje" />
 
           <Skill
             icon="/assets/skills/typescript.png"
@@ -116,10 +114,11 @@ export default function AboutMe() {
             type="Lenguaje"
           />
           <Skill
-            icon="/assets/skills/rust.png"
-            name="Rust"
+            icon="/assets/skills/python.png"
+            name="Python"
             type="Lenguaje"
           />
+          <Skill icon="/assets/skills/java.png" name="Java" type="Lenguaje" />
         </div>
         <h3>Herramientas</h3>
         <div className={style.skils}>
@@ -138,11 +137,7 @@ export default function AboutMe() {
             name="GitHub Actions"
             type="Herramienta"
           />
-          <Skill
-            icon="/assets/skills/git.png"
-            name="Git"
-            type="Herramienta"
-          />
+          <Skill icon="/assets/skills/git.png" name="Git" type="Herramienta" />
           <Skill
             icon="/assets/skills/firebase.png"
             name="Firebase"
@@ -172,6 +167,11 @@ export default function AboutMe() {
             icon="/assets/skills/blender.png"
             name="Blender"
             type="Modelado 3D"
+          />
+          <Skill
+            icon="/assets/skills/unity.webp"
+            name="Unity"
+            type="Motor de videojuegos / desarrollo 3D"
           />
         </div>
         <h3>Conocimiento de sistemas</h3>

@@ -1,4 +1,5 @@
 // Porftolio.jsx
+// eslint-disable-next-line no-unused-vars
 import { motion, useAnimation } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import { useEffect, useRef } from "react";
@@ -8,11 +9,11 @@ import logoKufta from "../../assets/logo/kufta_reverted.png";
 import logoKuftaPercha from "../../assets/portfolio/kufta_percha.png";
 import KuftaSoftware from "../../assets/portfolio/Kufta_software.png";
 import Contactme from "../../components/contactme/Contactme.jsx";
-import KuftaP1 from "../../assets/portfolio/Scr1.jpg";
-import KuftaP2 from "../../assets/portfolio/Scr2.jpg";
-import KuftaP3 from "../../assets/portfolio/Scr3.jpg";
+import KuftaP1 from "../../assets/portfolio/kufta_p1.png";
+import KuftaP2 from "../../assets/portfolio/kufta_p2.png";
+import KuftaP3 from "../../assets/portfolio/kufta_p3.png";
 import QrKuftaP from "../../assets/portfolio/qr-code.png";
-import onPlayStore from "../../assets/portfolio/on_play_store.png"
+import onPlayStore from "../../assets/portfolio/on_play_store.png";
 
 const title = "Portafolio";
 
@@ -174,7 +175,9 @@ export default function Portfolio() {
         </div>
         <div className={style.click_to}>
           <h1>¡Descarga Kufta Percha!</h1>
-          <p>Crea tus pintas, organizalas, planificas y disfruta de tú orden.</p>
+          <p>
+            Crea tus pintas, organizalas, planificas y disfruta de tú orden.
+          </p>
 
           <img src={QrKuftaP} alt="QR-code" />
 

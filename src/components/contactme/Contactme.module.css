@@ -44,6 +44,7 @@
 
 .input_group input,
 .input_group textarea {
+  resize: none;
   border: none;
   background: transparent;
   font-size: 1.1rem;

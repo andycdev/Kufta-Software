@@ -22,6 +22,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 100px;
+  box-sizing: border-box;
   border-bottom: 1px solid #e0e0e0;
 
   /* Liquid glass */
@@ -44,7 +46,7 @@
 
 .logo {
   height: 8vh;
-  max-height: 10vh;
+  max-height: 9vh;
   width: auto;
 }
 
@@ -84,8 +86,13 @@
 }
 
 .btn_hablemos {
+  display: flex; /* Agregamos flex */
+  align-items: center;
   cursor: pointer;
-  padding: 14px 22px;
+  padding: 0 22px; /* Cambiamos el padding: 0 arriba/abajo */
+  height: 45px;
+  margin: 0; /* Aseguramos que no haya margen externo */
+  line-height: 1;
   border-radius: 22px;
   letter-spacing: 1px;
   border-style: none;

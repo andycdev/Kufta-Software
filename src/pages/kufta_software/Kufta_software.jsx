@@ -43,7 +43,6 @@ export default function Kufta_software() {
           oportunidades profesionales.
         </p>
       </div>
-      .
       <Container_info />
       <div className={styles.how_do}>
         <h1 className={styles.how_do_title}>¿Cómo hacerlo?</h1>

@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+// eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "./components/header/Header.jsx";
 import KuftaSoftware from "./pages/kufta_software/Kufta_software.jsx";
 import Portfolio from "./pages/portfolio/Portfolio.jsx";
 import AboutMe from "./pages/aboutme/AboutMe.jsx";
+import ScrollToTop from "./components/scrollToTop/scrollToTop.jsx";
 
 const routes = ["/", "/portfolio", "/aboutme"];
 
@@ -37,6 +39,7 @@ function App() {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <Header currentIndex={currentIndex} onNavigate={handleNavigate} />
 
       <AnimatePresence mode="wait">

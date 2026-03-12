@@ -1,40 +1,35 @@
 /* Skill.module.css */
+
 .skill {
   width: 100%;
   aspect-ratio: 1 / 1;
-
-  background: linear-gradient(
-    135deg,
-    var(--skill-bg-start),
-    var(--skill-bg-end)
-  );
-
+  background: linear-gradient(135deg, var(--skill-bg-start), var(--skill-bg-end));
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
-
   border-radius: 22px;
   border: 1px solid var(--skill-border);
-
   box-shadow: var(--skill-shadow);
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
   text-align: center;
+  position: relative; /* Asegura el contexto */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  /* Espacio 3D */
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  overflow: visible; /* Permite que el icono sobresalga */
 }
 
 .skill:hover {
-  transform: translateY(-4px);
+  transform: translateY(-5px) rotateX(5deg); /* Inclinación sutil para el efecto 3D */
   box-shadow: var(--skill-hover-shadow);
 }
 
+/* El pseudo-elemento de fondo */
 .skill::before {
   content: "";
   position: absolute;
@@ -43,27 +38,52 @@
   background: var(--primary-color);
   opacity: 0;
   transition: opacity 0.35s ease;
-  z-index: 1;
+  z-index: 1; /* Fondo */
 }
+
 .skill:hover::before {
   opacity: 1;
 }
+
+/* Elementos hijos en general */
 .skill > * {
   position: relative;
-  z-index: 2;
-  transition:
-    filter 0.35s ease,
-    color 0.35s ease;
-}
-.skill:hover > * {
-  filter: brightness(0) invert(1);
+  z-index: 2; /* Por encima del fondo ::before */
+  transition: all 0.4s ease;
 }
 
+/* --- EL ICONO (LA ESTRELLA DEL SHOW) --- */
 .icon {
   width: 60px;
   height: 60px;
   object-fit: contain;
   margin-bottom: 0.5rem;
+  /* Estado inicial */
+  transform: translateZ(0px);
+  filter: drop-shadow(0 0 0px transparent);
+}
+
+.skill:hover .icon {
+  /* Combinamos todo en una sola línea de transform */
+  /* El translateZ(60px) lo acerca a la cámara */
+  transform: scale(1.4) translateZ(60px) translateY(-10px); 
+  z-index: 10; /* Aseguramos que esté por encima de todo */
+  
+  /* Sombra proyectada para realismo 3D */
+  filter: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* --- TEXTOS --- */
+.skill_name, .skill_type {
+  /* Evitamos que los textos suban tanto como el icono */
+  transform: translateZ(20px); 
+}
+
+.skill:hover .skill_name,
+.skill:hover .skill_type {
+  color: white;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
 }
 .skill_name {
   font-weight: 600;
