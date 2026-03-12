@@ -61,7 +61,7 @@ export default function AboutMe() {
             type="Framework"
           />
           <Skill
-            icon="/assets/skills/expressjs.png"
+            icon="/assets/skills/express.png"
             name="Express.js"
             type="Framework"
           />
