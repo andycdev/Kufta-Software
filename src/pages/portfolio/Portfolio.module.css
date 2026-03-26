@@ -273,3 +273,95 @@
     height: auto;
   }
 }
+
+/* Contenedor de las dos imágenes secundarias */
+.images_row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  justify-content: center;
+
+  img {
+    width: 48%; /* Casi la mitad para que quepan dos en fila */
+    height: auto;
+    object-fit: cover;
+    padding: 10px 0;
+  }
+
+  /* Responsivo: Si la pantalla es menor a 768px (Tablet/Celular) */
+  @media (max-width: 768px) {
+    flex-direction: column; /* Se ponen una debajo de otra */
+
+    img {
+      width: 100%; /* Ocupan todo el ancho disponible */
+    }
+  }
+}
+
+.main_image {
+  /* Estilo para la imagen grande de arriba */
+  display: block;
+  max-width: 100%;
+}
+
+.click_to {
+  text-align: center;
+  padding: 40px 20px;
+  background: rgba(26, 26, 26, 0.8);
+  border-radius: 15px;
+  margin-top: 30px;
+
+  h1 {
+    color: #ffd700; /* Gold */
+    font-family: "Fredoka", sans-serif;
+  }
+
+  p {
+    color: #cccccc;
+    margin-bottom: 25px;
+  }
+
+  /* El Botón con Efecto Gold */
+  .btn_visit {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Fredoka", sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ffd700; /* Se pone amarillo gold */
+      color: #000000; /* Texto negro para contraste */
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      transform: translateY(-3px);
+    }
+  }
+
+  /* Bloque de credenciales */
+  .access_info {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 1px dashed #444;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    p {
+      margin-bottom: 5px;
+      color: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    span {
+      font-size: 0.85rem;
+      color: #ffd700;
+      font-family: monospace; /* Para que parezca código/datos */
+    }
+  }
+}

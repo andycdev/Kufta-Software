@@ -37,6 +37,24 @@ function App() {
     navigate(routes[index]);
   };
 
+  useEffect(() => {
+    // Definimos los títulos según la ruta
+    const titles = {
+      "/": "Inicio",
+      "/portfolio": "Portafolio",
+      "/aboutme": "Sobre mí",
+    };
+
+    // Obtenemos el nombre de la página actual o un default
+    const currentPage = titles[location.pathname] || "Página";
+
+    // Cambiamos el título del documento
+    document.title = `Kufta Software | ${currentPage}`;
+
+    // Mantenemos el índice actualizado para el Header
+    setCurrentIndex(getInitialIndex(location.pathname));
+  }, [location.pathname]);
+
   return (
     <div className="app">
       <ScrollToTop />

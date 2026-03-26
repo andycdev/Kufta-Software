@@ -33,7 +33,6 @@
   overflow: visible;
 }
 
-
 .photo_wrapper img {
   width: 100%;
   height: 100%;
@@ -248,7 +247,9 @@
 
 @media (max-width: 800px) {
   .skils {
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    /* Bajamos el mínimo de 180px a 140px para que entren 2 sin romperse */
+    grid-template-columns: repeat(2, minmax(130px, 1fr));
+    gap: 1rem; /* Reducimos un poco el espacio entre tarjetas */
   }
 
   .my_route {
@@ -257,5 +258,12 @@
 
   .route_left h2 {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .skils {
+    /* En pantallas mini, mejor poner de a 1 para que no se vea minúsculo */
+    grid-template-columns: 1fr;
   }
 }

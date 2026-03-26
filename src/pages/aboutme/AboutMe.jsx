@@ -66,6 +66,11 @@ export default function AboutMe() {
             type="Framework"
           />
           <Skill
+            icon="/assets/skills/dotnet.png"
+            name=".Net"
+            type="Framework"
+          />
+          <Skill
             icon="/assets/skills/angular.png"
             name="Angular"
             type="Framework"
@@ -97,7 +102,11 @@ export default function AboutMe() {
             name="TypeScript"
             type="Lenguaje"
           />
-
+          <Skill
+            icon="/assets/skills/csharp.png"
+            name="C#"
+            type="Lenguaje"
+          />
           <Skill
             icon="/assets/skills/html.png"
             name="HTML"

@@ -3,7 +3,11 @@
 .skill {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: linear-gradient(135deg, var(--skill-bg-start), var(--skill-bg-end));
+  background: linear-gradient(
+    135deg,
+    var(--skill-bg-start),
+    var(--skill-bg-end)
+  );
   backdrop-filter: blur(14px) saturate(140%);
   -webkit-backdrop-filter: blur(14px) saturate(140%);
   border-radius: 22px;
@@ -13,15 +17,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   text-align: center;
   position: relative; /* Asegura el contexto */
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
 
   /* Espacio 3D */
   transform-style: preserve-3d;
   perspective: 1000px;
   overflow: visible; /* Permite que el icono sobresalga */
+
+  padding: 10px; /* Añadimos un poco de aire interno */
+  gap: 0.5rem; /* Reducimos el espacio entre icono y textos */
+  box-sizing: border-box;
 }
 
 .skill:hover {
@@ -54,10 +63,11 @@
 
 /* --- EL ICONO (LA ESTRELLA DEL SHOW) --- */
 .icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   margin-bottom: 0.5rem;
+  flex-shrink: 0;
   /* Estado inicial */
   transform: translateZ(0px);
   filter: drop-shadow(0 0 0px transparent);
@@ -66,17 +76,18 @@
 .skill:hover .icon {
   /* Combinamos todo en una sola línea de transform */
   /* El translateZ(60px) lo acerca a la cámara */
-  transform: scale(1.4) translateZ(60px) translateY(-10px); 
+  transform: scale(1.4) translateZ(60px) translateY(-10px);
   z-index: 10; /* Aseguramos que esté por encima de todo */
-  
+
   /* Sombra proyectada para realismo 3D */
   filter: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.4));
 }
 
 /* --- TEXTOS --- */
-.skill_name, .skill_type {
+.skill_name,
+.skill_type {
   /* Evitamos que los textos suban tanto como el icono */
-  transform: translateZ(20px); 
+  transform: translateZ(20px);
 }
 
 .skill:hover .skill_name,
@@ -87,11 +98,39 @@
 }
 .skill_name {
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.1rem; /* Bajamos de 1.5rem (que es enorme para una card pequeña) */
   color: var(--skill-text);
+  line-height: 1.2;
+  margin: 0;
+  /* Control de desborde */
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Si el nombre es muy largo, máximo 2 líneas */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .skill_type {
-  font-size: 16px;
+  font-size: 12px; /* Bajamos de 16px a 12px */
   color: var(--skill-type-text);
+  opacity: 0.8;
+  margin: 0;
+  /* Evita que este texto empuje todo hacia afuera */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+}
+
+/* --- Ajuste para móviles muy pequeños --- */
+@media (max-width: 400px) {
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .skill_name {
+    font-size: 0.9rem;
+  }
+  .skill_type {
+    display: none; /* Opcional: ocultar el tipo en pantallas mini para priorizar el nombre */
+  }
 }

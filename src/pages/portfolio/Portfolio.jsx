@@ -15,6 +15,11 @@ import KuftaP3 from "../../assets/portfolio/kufta_p3.png";
 import QrKuftaP from "../../assets/portfolio/qr-code.png";
 import onPlayStore from "../../assets/portfolio/on_play_store.png";
 
+import logoBarberKing from "../../assets/portfolio/kingsbarber.png";
+import BarberKing from "../../assets/portfolio/kings_barber.png";
+import BarberKingDashboard from "../../assets/portfolio/kings_barberdashboard.png";
+import EmailBarber from "../../assets/portfolio/email_barbersking.jpg";
+
 const title = "Portafolio";
 
 const containerVariants = {
@@ -47,6 +52,7 @@ export default function Portfolio() {
   const location = useLocation();
   const kuftaSoftwareRef = useRef(null);
   const kuftaPerchaRef = useRef(null);
+  const BarbersKingRef = useRef(null);
 
   useEffect(() => {
     if (location.pathname === "/portfolio") {
@@ -109,6 +115,18 @@ export default function Portfolio() {
           >
             <img src={logoKuftaPercha} alt="Kufta Percha Logo" />
             <p>Kufta Percha</p>
+          </motion.div>
+
+          <motion.div
+            className={style.glass_container}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            onClick={() =>
+              BarbersKingRef.current.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <img src={logoBarberKing} alt="Kings Barber Logo" />
+            <p>Barbers King</p>
           </motion.div>
         </div>
       </div>
@@ -174,7 +192,7 @@ export default function Portfolio() {
           </p>
         </div>
         <div className={style.click_to}>
-          <h1>¡Descarga Kufta Percha!</h1>
+          <h1 style={{color: "white"}}>¡Descarga Kufta Percha!</h1>
           <p>
             Crea tus pintas, organizalas, planificas y disfruta de tú orden.
           </p>
@@ -186,12 +204,122 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              // src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png"
-              src={onPlayStore}
-              alt="Disponible en Google Play"
-            />
+            <img src={onPlayStore} alt="Disponible en Google Play" />
           </a>
+        </div>
+      </div>
+
+      <div className={style.line} ref={BarbersKingRef}></div>
+
+      <div className={style.kufta_software}>
+        <h2>Barbers King</h2>
+        <p>
+          <strong>Barbers King</strong> es una plataforma integral de gestión de
+          citas diseñada para modernizar la operación de barberías
+          profesionales. Este proyecto resuelve la problemática de la gestión
+          manual de turnos, optimizando el tiempo del barbero y mejorando la
+          experiencia del cliente final.
+        </p>
+        <img
+          src={BarberKing}
+          alt="Kings Barber Home"
+          className={style.main_image}
+          style={{
+            border: "2px solid gold",
+            width: "100%",
+            marginBottom: "20px",
+          }}
+        />
+
+        {/* Contenedor para las dos imágenes en fila (Dashboard y Email) */}
+        <div className={style.images_row}>
+          <img
+            src={BarberKingDashboard}
+            alt="Kings Barber Dashboard"
+            style={{ border: "2px solid gold" }}
+          />
+          <img
+            src={EmailBarber}
+            alt="Kings Barber Email"
+            style={{ border: "2px solid gold" }}
+          />
+        </div>
+        <div className={style.row_kufta_software_info}>
+          <div className={style.info_block}>
+            <h2 style={{ display: "flex", alignContent: "start" }}>
+              Solución Tecnológica
+            </h2>
+            <p>
+              Implementé un sistema de <strong>agendamiento inteligente</strong>{" "}
+              que valida en tiempo real la disponibilidad de los barberos,
+              considerando horarios laborales, horas de almuerzo y cruce de
+              citas existentes.
+            </p>
+            <br />
+            <p>
+              Desarrollé un sistema de{" "}
+              <strong>notificaciones automáticas</strong> integrado con la API
+              de Brevo, garantizando que tanto el cliente como el barbero
+              reciban confirmaciones inmediatas, superando las restricciones de
+              red comunes en entornos cloud.
+            </p>
+          </div>
+          <br />
+
+          <div className={style.info_block}>
+            <p>
+              <h2 style={{ display: "flex", alignContent: "start" }}>
+                Stack Técnico
+              </h2>
+              <ul>
+                <li>
+                  <strong>Frontend:</strong> Angular 17+ con arquitectura de{" "}
+                  <strong>Signals</strong> para una reactividad eficiente y
+                  estilos personalizados con SASS y fuentes modernas (Fredoka).
+                </li>
+                <li>
+                  <strong>Backend:</strong> .NET Core API con{" "}
+                  <strong>Entity Framework Core</strong> y PostgreSQL,
+                  implementando seguridad basada en roles (Admin/Barbero).
+                </li>
+                <li>
+                  <strong>Infraestructura:</strong> Despliegue automatizado en
+                  Docker y Render, utilizando variables de entorno para una
+                  gestión segura de secretos y APIs.
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+        <div className={style.click_to}>
+          <h1>¡Visita Barbers King!</h1>
+          <p style={{textAlign:"center"}}>
+            Gestiona tus citas de barbería con un sistema de agendamiento
+            inteligente y notificaciones en tiempo real.
+          </p>
+
+          {/* Botón con enlace */}
+          <a
+            href="https://barbers-king-front.onrender.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.btn_visit}
+          >
+            Explorar Aplicación
+          </a>
+
+          {/* Información de acceso para el portafolio */}
+          <div className={style.access_info}>
+            <p style={{textAlign: "center"}}>
+              <strong>Prueba el Dashboard (Admin):</strong>
+            </p>
+            <span>
+              <strong>Usuario:</strong> admin.prueba@kingsbarber.com
+            </span>
+            <span>
+              <strong>Contraseña:</strong> Admin123
+            </span>
+          </div>
         </div>
       </div>
 
